@@ -1,0 +1,172 @@
+--------------Exercicios da aula 09/09/2025 ----------------------
+//Criação de um objeto:
+let aluno = {
+  nome: "João",
+  nota: "7.0",
+  faltas: "0",
+};
+console.log(aluno.nota); // 7
+console.log(aluno.nome); // João
+console.log(aluno.faltas); // 0
+
+-------------------------------------------
+//Exercicio de criação de tipo e interface
+
+//Criação de tipo:
+type Aluno = {
+    nome: string;
+    falta: number;
+    nota: number;
+};
+
+let aluno1: Aluno = {
+        nome: "Joao",
+        falta: 2,
+        nota: 8.6,
+};
+
+console.log(aluno1.nota); // 8.6
+
+-------------------------------------------
+//Criação de interface:
+interface Aluno {
+    nome: string;
+    falta: number;
+    nota: number;
+};
+
+let aluno2: Aluno = {
+        nome: "Miguel",
+        falta: 2,
+        nota: 9.5,
+};
+
+console.log(aluno2.nota); // 9.5
+
+-------------------------------------------
+//Praticando 1
+
+//Exercicio 1
+type Produto = {
+  nome: string;
+  preco: number;
+  emEstoque: boolean;
+};
+
+let produto1: Produto = {
+  nome: "Notebook",
+  preco: 3500,
+  emEstoque: true,
+};
+
+console.log(`${produto1.nome} custa R$ ${produto1.preco} e esta em estoque? ${produto1.emEstoque}´);
+
+-------------------------------------------
+//Praticando 2
+
+//Exercicio 2
+interface Cliente {
+  nome: string;
+  idade: number;
+  vip: boolean;
+};
+
+let cliente1: Cliente = {
+  nome: "João",
+  idade: 20,
+  vip: false,
+};
+
+console.log(`${cliente1.nome} tem ${cliente1.idaide} e possui acesso ao vip? ${cliente1.vip}`);
+
+-------------------------------------------
+//Praticando 3
+
+//Exercicio 3
+type Carro = {
+  marca: string;
+  modelo: string;
+  ano: number;
+};
+
+interface Moto {
+  marca: string;
+  cilindradas: number;
+  ano: number;
+};
+
+let carro1: Carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  ano: 2022,
+}
+
+let moto1: Moto = {
+  marca: "Honda",
+  cilindradas: 160,
+  ano: 2023,
+}
+
+console.log(`Carro: ${carro1.marca} ${carro1.modelo}, Ano: ${carro1.ano}`);
+console.log(`Moto: ${moto1.marca} ${moto1.cilindradas}cc, Ano: ${moto1.ano}`);
+
+-------------------------------------------
+//Arquivo txt
+//Exemplo 1
+
+import * as fs from "fs"; //importa o modulo fs do node usado para manipular arquivos
+import * as path from "path"; //importa o modulo path do node monta caminhos de uma forma mais segura
+
+//Caminho do Arquivo
+const filePath = path.join(__dirname, "saida.txt");
+
+//Conteudo que vai ter no arquivo
+const texto = "Ola, Este é um arquivo criado em typescript";
+
+//Escrevendo no arquivo(sobrescrever)
+fs.writeFileSync(filePath, texto, "utf-8");
+
+console.log("ARQUIVO TXT CIRADO EM: ", filePath);
+
+-------------------------------------------
+//Agora com csv
+//Exercicio 2
+
+import * as fs from "fs"; //importa o modulo fs do node usado para manipular arquivos, mesmo que foi usado para o arquivo txt
+import * as path from "path"; //importa o modulo path do node monta caminhos de uma forma mais segura, tambem o mesmo usado anteriormente em txt
+
+//Caminho do arquivo
+const csvPath = path.join(__dirname, "saida.csv");
+
+//Cabeçalho CSV
+const header = "Nome;Idade/Cidade/n"
+
+//Dados que irao estar no arquivo
+const linhas + [
+  "Luana;22;Jundiai",
+  "Miguel;21;Varzea Paulista",
+  "Henrique;19;Campinas",
+].join("/n");
+
+//Monta o conteudo
+const conteudo = header + linhas;
+
+//Escrever no arquivo
+fs.writeFileSync(csvPath, conteudo, "utf-8");
+
+console.log("Arquivo CSV criado em: ", csvPath);
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
