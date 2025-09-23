@@ -1,6 +1,6 @@
 // Exemplo de código do professor Eduardo Popovici
 // Aula de lógica de programação com type 
-// Declaração de uma variável chamada "mes" do tipo number e atribuição do valor 4.
+// Declaração de uma variável chamada "mes" do tipo number e atribuição do valor 6.
 let mes: number = 6;
 
 // Estrutura switch para verificar o valor da variável "mes" e exibir o nome correspondente do mês.
